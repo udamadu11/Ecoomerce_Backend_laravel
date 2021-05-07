@@ -16,4 +16,11 @@ class UserController extends Controller
         $user->save();
         return $user;
     }
+    function login(Request $req){
+        $user = User::where('email',$req->email)->first();
+        if(!$user || ($user->password != $req->password)){
+            return ["error"=>"user email or password not match !!!"];
+        }
+        return $user;
+    }
 }
