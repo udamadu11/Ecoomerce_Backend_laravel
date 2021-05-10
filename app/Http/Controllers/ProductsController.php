@@ -16,4 +16,8 @@ class ProductsController extends Controller
         $products->save();
         return $products;
     }
+    function list(){
+        $products = Product::all();
+        return $products;
+    }
 }
