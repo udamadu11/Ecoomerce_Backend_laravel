@@ -20,4 +20,12 @@ class ProductsController extends Controller
         $products = Product::all();
         return $products;
     }
+    function delete($id){
+        $products = Product::where('id',$id)->delete();
+        if($products){
+            return ['result'=>'delete'];
+        }else{
+            return ['result'=>'fail'];
+        }
+    }
 }
