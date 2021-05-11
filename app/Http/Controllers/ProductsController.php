@@ -28,4 +28,7 @@ class ProductsController extends Controller
             return ['result'=>'fail'];
         }
     }
+    function getProduct($id){
+        return Product::find($id);
+    }
 }
